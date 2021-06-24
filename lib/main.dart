@@ -1,6 +1,5 @@
-import 'package:carsi_yeri/OnboardingPage.dart';
+import 'package:carsi_yeri/pages/LoginPage.dart';
 import 'package:carsi_yeri/constants/const.dart';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: AppName,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: OnboardingScreen(),
+      home: LoginPage(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:carsi_yeri/OnboardingPage.dart';
+import 'package:carsi_yeri/pages/OnboardingPage.dart';
 import 'package:carsi_yeri/main.dart';
 import 'package:flutter/material.dart';
 

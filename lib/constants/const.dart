@@ -6,9 +6,13 @@ String onboardingPicPath2 = "images/onboarding_2.png";
 String onboardingPicPath3 = "images/onboarding_3.png";
 
 //Strings
-
+final String userText = "E-Posta veya Telefon";
+final String passText = "Parola";
+final String loginText = "Giriş";
 const String AppName = "ÇarşıYeri";
 final String onboardingBottomButtonText = "GEÇ";
+final String userName = "admin";
+final String pass = "admin";
 
 final String onboardingUpText1 = "ÇarşıYeri ile çarşı hizmeti evinizde!";
 final String onboardingUpText2 = "Sepetinizi oluşturun";
@@ -31,4 +35,14 @@ TextStyle textStyleDown({fontSize = 18.0, color = Colors.black}) => TextStyle(
       color: color,
       fontSize: fontSize,
       fontWeight: FontWeight.normal,
+    );
+
+TextStyle textStyle({fontSize: double, color: Color}) => TextStyle(
+      color: color,
+      fontSize: fontSize,
+      fontWeight: FontWeight.w700,
+    );
+BorderRadius get loginButtonBorderStyle => BorderRadius.only(
+      bottomRight: Radius.circular(100),
+      topLeft: Radius.circular(100),
     );

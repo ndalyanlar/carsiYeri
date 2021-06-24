@@ -1,5 +1,6 @@
 import 'package:carsi_yeri/constants/const.dart';
 import 'package:carsi_yeri/GoToLastPage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -14,10 +15,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   PageController controller = new PageController();
 
 //Geç butonu basıldığında sayfayı bitiriyor.
-  void _onIntroEnd(context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => GoToLastPage()),
-    );
+  void _onIntroEnd(lastPage) {
+    lastPage = pages.length - 1;
   }
 
 //sayfa index'i ile indicators durumunu senkronize ediyoruz.
@@ -103,23 +102,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: Align(
                   alignment: AlignmentDirectional.bottomCenter,
                   child: Container(
-                    margin: EdgeInsets.only(bottom: 20),
-                    child: TextButton(
-                      onPressed: () {
-                        setState(() {
-                          print(MediaQuery.of(context).size.height);
-
-                          getChangedPageAndMoveBar(pages.length - 1);
-
-                          _onIntroEnd(context);
-                        });
-                      },
-                      child: Text(
-                        onboardingBottomButtonText,
-                        style: TextStyle(fontSize: 22, color: Colors.black),
-                      ),
-                    ),
-                  ),
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            getChangedPageAndMoveBar(pages.length - 1);
+                            controller.animateToPage(pages.length,
+                                duration: Duration(milliseconds: 1000),
+                                curve: Curves.ease);
+                          });
+                        },
+                        child: Text(
+                          onboardingBottomButtonText,
+                          style: TextStyle(fontSize: 22, color: Colors.black),
+                        ),
+                      )),
                 ),
               ),
             ],
