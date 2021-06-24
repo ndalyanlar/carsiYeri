@@ -1,6 +1,6 @@
 # carsi_yeri
 
-@alicanbatur @ndalyanlar @dorukbatur
+Alican Batur - Logo nerdeeee logo :D 
 
 ## Getting Started
 
